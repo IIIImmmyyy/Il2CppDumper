@@ -34,8 +34,8 @@ namespace Il2CppDumper
             var il2CppDummyDll = AssemblyDefinition.ReadAssembly(new MemoryStream(Resource1.Il2CppDummyDll));
             Assemblies.Add(il2CppDummyDll);
             var dummyMD = il2CppDummyDll.MainModule;
-            var addressAttribute = dummyMD.Types.First(x => x.Name == "AddressAttribute").Methods[0];
-            var fieldOffsetAttribute = dummyMD.Types.First(x => x.Name == "FieldOffsetAttribute").Methods[0];
+            //var addressAttribute = dummyMD.Types.First(x => x.Name == "AddressAttribute").Methods[0];
+            //var fieldOffsetAttribute = dummyMD.Types.First(x => x.Name == "FieldOffsetAttribute").Methods[0];
             attributeAttribute = dummyMD.Types.First(x => x.Name == "AttributeAttribute").Methods[0];
             var metadataOffsetAttribute = dummyMD.Types.First(x => x.Name == "MetadataOffsetAttribute").Methods[0];
             var tokenAttribute = dummyMD.Types.First(x => x.Name == "TokenAttribute").Methods[0];
@@ -203,7 +203,7 @@ namespace Il2CppDumper
                             }
                         }
                         //fieldOffset
-                        if (!fieldDefinition.IsLiteral)
+                        /*if (!fieldDefinition.IsLiteral)
                         {
                             var fieldOffset = il2Cpp.GetFieldOffsetFromIndex(index, i - typeDef.fieldStart, i, typeDefinition.IsValueType, fieldDefinition.IsStatic);
                             if (fieldOffset >= 0)
@@ -213,7 +213,7 @@ namespace Il2CppDumper
                                 customAttribute.Fields.Add(offset);
                                 fieldDefinition.CustomAttributes.Add(customAttribute);
                             }
-                        }
+                        }*/
                     }
                     //method
                     var methodEnd = typeDef.methodStart + typeDef.method_count;
@@ -299,7 +299,7 @@ namespace Il2CppDumper
                             }
                         }
                         //methodAddress
-                        if (!methodDefinition.IsAbstract)
+                        /*if (!methodDefinition.IsAbstract)
                         {
                             var methodPointer = il2Cpp.GetMethodPointer(imageName, methodDef);
                             if (methodPointer > 0)
@@ -319,7 +319,7 @@ namespace Il2CppDumper
                                 }
                                 methodDefinition.CustomAttributes.Add(customAttribute);
                             }
-                        }
+                        }*/
                     }
                     //property
                     var propertyEnd = typeDef.propertyStart + typeDef.property_count;

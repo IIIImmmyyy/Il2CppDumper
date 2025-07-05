@@ -8,7 +8,7 @@
   "DumpTypeDefIndex": true,
   "GenerateDummyDll": true,
   "GenerateStruct": true,
-  "DummyDllAddToken": true,
+  "DummyDllAddToken": false,
   "RequireAnyKey": true,
   "ForceIl2CppVersion": false,
   "ForceVersion": 16,
