@@ -11,7 +11,7 @@ namespace Il2CppDumper
                 Directory.Delete("DummyDll", true);
             Directory.CreateDirectory("DummyDll");
             Directory.SetCurrentDirectory("DummyDll");
-            var dummy = new DummyAssemblyGenerator(il2CppExecutor, addToken);
+            var dummy = new DummyAssemblyGenerator(il2CppExecutor, false);
             foreach (var assembly in dummy.Assemblies)
             {
                 using var stream = new MemoryStream();
